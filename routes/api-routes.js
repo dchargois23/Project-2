@@ -11,16 +11,16 @@ module.exports = function (app) {
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
-      email: req.user.email,
-      id: req.user.id
+      email: req.body.email,
+      id: req.body.id
     })
   });
 
-  app.get("/api/users", (req, res)=>{
+  app.get("/api/users", (req, res) => {
     db.User.findAll({})
-    .then(dbUser =>{
-      res.json(dbUser);
-    })
+      .then(dbUser => {
+        res.json(dbUser);
+      })
   })
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
