@@ -11,6 +11,7 @@ API_KEY = "your api key for XYZ from Rapid API"
 
 run `npm install` from your terminal to install dependecies. 
 
+Click on the link below for an easy access to the application:
 
 ![](images/screenshot.png)
 
